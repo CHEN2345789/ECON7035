@@ -7,6 +7,7 @@ def clean(input_file1, input_file2):
     df = pd.merge(df1, df2, left_on='respondent_id', right_on='id').dropna().drop('id', axis=1)
     df = df[df['job'].str.contains('Insurance') == False]
     df = df[df['job'].str.contains('insurance') == False]
+    print(df.shape)
     return df
 
 
